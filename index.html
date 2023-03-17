@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Beyond 0451 Review System</title>
+        <style>
+            body {
+                background-color: #333;
+                color: #fff;
+                font-family: "Montserrat", sans-serif;
+                max-width: 1000px;
+                min-width: 1000px;
+                margin: 0 auto;
+            }
+
+            #title-box {
+                border: 0px solid #fff;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+			
+			#chart-label {
+                font-size: 14px;
+                font-weight: bold;
+            }
+			
+            #categories-column {
+                display: inline-block;
+                vertical-align: top;
+				width: 580px;
+            }
+
+            #categories-column h2 {
+                font-size: 16px;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            #categories-column label {
+                display: inline-block;
+                margin-left: 5px;
+                margin-bottom: 5px;
+                font-size: 12px;
+            }
+
+            #score-column {
+                display: inline-block;
+                width: 420px;
+                vertical-align: center;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .column {
+                float: left;
+                padding: 10px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 400px;
+                background-color: black;
+                color: rgba(153, 102, 255, 1);
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: fixed;
+                z-index: 1;
+                bottom: 83%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+
+            .tooltip .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+
+            input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                margin-right: 0px;
+                display: inline-block;
+                vertical-align: middle;
+                border: 1px solid rgba(153, 102, 255, 1);
+                border-radius: 7px;
+                width: 14px;
+                height: 14px;
+                outline: 0px;
+                cursor: pointer;
+            }
+
+            input[type="checkbox"]:checked {
+                background-color: rgba(153, 102, 255, 1);
+            }
+			.checkbox-container {
+				border: 1px solid black;
+				padding: 5px;
+			}
+			.category-elements {
+				display: none;
+			}
+
+			.category-elements.show {
+				display: block;
+			}
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div id="title-box">
+            Beyond 0451 Review System v1.0
+        </div>
+<!-- Name -->
+        <div id="categories-column" class="column">
+            <label for="chart-label"><h2 class="category-header">Name of game:</h2></label>
+            <input type="text" id="chart-label" name="chart-label" />
+			<br />
+			<small>Click on a category to expand it:</small>
+<!-- Category 1 -->
+			<h2 class="category-header" data-category="1">Emergent</h2>
+			<div class="category-elements" data-category="1">
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-1" name="category-1-element-1" />
+            <label class="tooltip" for="category-1-element-1">
+                Player and AI are both subject to the same predictable environmental rules and constraints
+                <span class="tooltiptext">(e.g., player can steal a guard's key and lock them out of an area, AI and player can fall victim to environmental traps / hazards)</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-2" name="category-1-element-2" />
+            <label class="tooltip" for="category-1-element-2">
+                Player can dynamically control individual systems
+                <span class="tooltiptext">(e.g., possession, mind control, hacked security robot)</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-3" name="category-1-element-3" />
+            <label class="tooltip" for="category-1-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-4" name="category-1-element-4" />
+            <label class="tooltip" for="category-1-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-5" name="category-1-element-5" />
+            <label class="tooltip" for="category-1-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-6" name="category-1-element-6" />
+            <label class="tooltip" for="category-1-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-7" name="category-1-element-7" />
+            <label class="tooltip" for="category-1-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-8" name="category-1-element-8" />
+            <label class="tooltip" for="category-1-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-9" name="category-1-element-9" />
+            <label class="tooltip" for="category-1-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-1-element-10" name="category-1-element-10" />
+            <label class="tooltip" for="category-1-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 2 -->
+			<h2 class="category-header" data-category="2">Non-linear</h2>
+			<div class="category-elements" data-category="2">
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-1" name="category-2-element-1" />
+            <label class="tooltip" for="category-2-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-2" name="category-2-element-2" />
+            <label class="tooltip" for="category-2-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-3" name="category-2-element-3" />
+            <label class="tooltip" for="category-2-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-4" name="category-2-element-4" />
+            <label class="tooltip" for="category-2-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-5" name="category-2-element-5" />
+            <label class="tooltip" for="category-2-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-6" name="category-2-element-6" />
+            <label class="tooltip" for="category-2-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-7" name="category-2-element-7" />
+            <label class="tooltip" for="category-2-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-8" name="category-2-element-8" />
+            <label class="tooltip" for="category-2-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-9" name="category-2-element-9" />
+            <label class="tooltip" for="category-2-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-2-element-10" name="category-2-element-10" />
+            <label class="tooltip" for="category-2-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 3 -->
+			<h2 class="category-header" data-category="3">Reactive</h2>
+			<div class="category-elements" data-category="3">
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-1" name="category-3-element-1" />
+            <label class="tooltip" for="category-3-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-2" name="category-3-element-2" />
+            <label class="tooltip" for="category-3-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-3" name="category-3-element-3" />
+            <label class="tooltip" for="category-3-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-4" name="category-3-element-4" />
+            <label class="tooltip" for="category-3-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-5" name="category-3-element-5" />
+            <label class="tooltip" for="category-3-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-6" name="category-3-element-6" />
+            <label class="tooltip" for="category-3-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-7" name="category-3-element-7" />
+            <label class="tooltip" for="category-3-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-8" name="category-3-element-8" />
+            <label class="tooltip" for="category-3-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-9" name="category-3-element-9" />
+            <label class="tooltip" for="category-3-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-3-element-10" name="category-3-element-10" />
+            <label class="tooltip" for="category-3-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 4 -->
+			<h2 class="category-header" data-category="4">Immersive</h2>
+			<div class="category-elements" data-category="4">
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-1" name="category-4-element-1" />
+            <label class="tooltip" for="category-4-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-2" name="category-4-element-2" />
+            <label class="tooltip" for="category-4-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-3" name="category-4-element-3" />
+            <label class="tooltip" for="category-4-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-4" name="category-4-element-4" />
+            <label class="tooltip" for="category-4-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-5" name="category-4-element-5" />
+            <label class="tooltip" for="category-4-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-6" name="category-4-element-6" />
+            <label class="tooltip" for="category-4-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-7" name="category-4-element-7" />
+            <label class="tooltip" for="category-4-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-8" name="category-4-element-8" />
+            <label class="tooltip" for="category-4-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-9" name="category-4-element-9" />
+            <label class="tooltip" for="category-4-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-4-element-10" name="category-4-element-10" />
+            <label class="tooltip" for="category-4-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 5 -->
+			<h2 class="category-header" data-category="5">Exploration</h2>
+			<div class="category-elements" data-category="5">
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-1" name="category-5-element-1" />
+            <label class="tooltip" for="category-5-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-2" name="category-5-element-2" />
+            <label class="tooltip" for="category-5-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-3" name="category-5-element-3" />
+            <label class="tooltip" for="category-5-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-4" name="category-5-element-4" />
+            <label class="tooltip" for="category-5-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-5" name="category-5-element-5" />
+            <label class="tooltip" for="category-5-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-6" name="category-5-element-6" />
+            <label class="tooltip" for="category-5-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-7" name="category-5-element-7" />
+            <label class="tooltip" for="category-5-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-8" name="category-5-element-8" />
+            <label class="tooltip" for="category-5-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-9" name="category-5-element-9" />
+            <label class="tooltip" for="category-5-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-5-element-10" name="category-5-element-10" />
+            <label class="tooltip" for="category-5-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 6 -->
+			<h2 class="category-header" data-category="6">Aggressive combat</h2>
+			<div class="category-elements" data-category="6">
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-1" name="category-6-element-1" />
+            <label class="tooltip" for="category-6-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-2" name="category-6-element-2" />
+            <label class="tooltip" for="category-6-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-3" name="category-6-element-3" />
+            <label class="tooltip" for="category-6-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-4" name="category-6-element-4" />
+            <label class="tooltip" for="category-6-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-5" name="category-6-element-5" />
+            <label class="tooltip" for="category-6-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-6" name="category-6-element-6" />
+            <label class="tooltip" for="category-6-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-7" name="category-6-element-7" />
+            <label class="tooltip" for="category-6-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-8" name="category-6-element-8" />
+            <label class="tooltip" for="category-6-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-9" name="category-6-element-9" />
+            <label class="tooltip" for="category-6-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-6-element-10" name="category-6-element-10" />
+            <label class="tooltip" for="category-6-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 7 -->
+			<h2 class="category-header" data-category="7">Strategic Combat</h2>
+			<div class="category-elements" data-category="7">
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-1" name="category-7-element-1" />
+            <label class="tooltip" for="category-7-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-2" name="category-7-element-2" />
+            <label class="tooltip" for="category-7-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-3" name="category-7-element-3" />
+            <label class="tooltip" for="category-7-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-4" name="category-7-element-4" />
+            <label class="tooltip" for="category-7-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-5" name="category-7-element-5" />
+            <label class="tooltip" for="category-7-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-6" name="category-7-element-6" />
+            <label class="tooltip" for="category-7-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-7" name="category-7-element-7" />
+            <label class="tooltip" for="category-7-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-8" name="category-7-element-8" />
+            <label class="tooltip" for="category-7-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-9" name="category-7-element-9" />
+            <label class="tooltip" for="category-7-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-7-element-10" name="category-7-element-10" />
+            <label class="tooltip" for="category-7-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 8 -->
+			<h2 class="category-header" data-category="8">RPG</h2>
+			<div class="category-elements" data-category="8">
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-1" name="category-8-element-1" />
+            <label class="tooltip" for="category-8-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-2" name="category-8-element-2" />
+            <label class="tooltip" for="category-8-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-3" name="category-8-element-3" />
+            <label class="tooltip" for="category-8-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-4" name="category-8-element-4" />
+            <label class="tooltip" for="category-8-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-5" name="category-8-element-5" />
+            <label class="tooltip" for="category-8-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-6" name="category-8-element-6" />
+            <label class="tooltip" for="category-8-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-7" name="category-8-element-7" />
+            <label class="tooltip" for="category-8-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-8" name="category-8-element-8" />
+            <label class="tooltip" for="category-8-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-9" name="category-8-element-9" />
+            <label class="tooltip" for="category-8-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-8-element-10" name="category-8-element-10" />
+            <label class="tooltip" for="category-8-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 9 -->
+			<h2 class="category-header" data-category="9">Stealth</h2>
+			<div class="category-elements" data-category="9">
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-1" name="category-9-element-1" />
+            <label class="tooltip" for="category-9-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-2" name="category-9-element-2" />
+            <label class="tooltip" for="category-9-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-3" name="category-9-element-3" />
+            <label class="tooltip" for="category-9-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-4" name="category-9-element-4" />
+            <label class="tooltip" for="category-9-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-5" name="category-9-element-5" />
+            <label class="tooltip" for="category-9-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-6" name="category-9-element-6" />
+            <label class="tooltip" for="category-9-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-7" name="category-9-element-7" />
+            <label class="tooltip" for="category-9-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-8" name="category-9-element-8" />
+            <label class="tooltip" for="category-9-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-9" name="category-9-element-9" />
+            <label class="tooltip" for="category-9-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-9-element-10" name="category-9-element-10" />
+            <label class="tooltip" for="category-9-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 10 -->
+			<h2 class="category-header" data-category="10">Social</h2>
+			<div class="category-elements" data-category="10">
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-1" name="category-10-element-1" />
+            <label class="tooltip" for="category-10-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-2" name="category-10-element-2" />
+            <label class="tooltip" for="category-10-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-3" name="category-10-element-3" />
+            <label class="tooltip" for="category-10-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-4" name="category-10-element-4" />
+            <label class="tooltip" for="category-10-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-5" name="category-10-element-5" />
+            <label class="tooltip" for="category-10-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-6" name="category-10-element-6" />
+            <label class="tooltip" for="category-10-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-7" name="category-10-element-7" />
+            <label class="tooltip" for="category-10-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-8" name="category-10-element-8" />
+            <label class="tooltip" for="category-10-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-9" name="category-10-element-9" />
+            <label class="tooltip" for="category-10-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-10-element-10" name="category-10-element-10" />
+            <label class="tooltip" for="category-10-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+			</div>
+<!-- Category 11 -->
+			<h2 class="category-header" data-category="11">Randomization</h2>
+			<div class="category-elements" data-category="11">
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-1" name="category-11-element-1" />
+            <label class="tooltip" for="category-11-element-1" title="Tooltip text 1">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-2" name="category-11-element-2" />
+            <label class="tooltip" for="category-11-element-2">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-3" name="category-11-element-3" />
+            <label class="tooltip" for="category-11-element-3">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-4" name="category-11-element-4" />
+            <label class="tooltip" for="category-11-element-4">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-5" name="category-11-element-5" />
+            <label class="tooltip" for="category-11-element-5">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-6" name="category-11-element-6" />
+            <label class="tooltip" for="category-11-element-6">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-7" name="category-11-element-7" />
+            <label class="tooltip" for="category-11-element-7">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-8" name="category-11-element-8" />
+            <label class="tooltip" for="category-11-element-8">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-9" name="category-11-element-9" />
+            <label class="tooltip" for="category-11-element-9">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+            
+            <div class="checkbox-container"><input type="checkbox" id="category-11-element-10" name="category-11-element-10" />
+            <label class="tooltip" for="category-11-element-10">
+                Element 1
+                <span class="tooltiptext">Tooltip text</span>
+            </label></div>
+        </div>
+		</div>
+        <div id="score-column" class="column" style="position: fixed; top: 50%; transform: translateY(-50%); text-align: center; max-width: 420px; min-width: 420px;">
+            <canvas id="radar-chart"></canvas>
+            <br />
+			
+<!-- Curator -->
+            <label class="tooltip">
+                <button id="copy-button-2">Copy curator review to clipboard</button>
+                <span class="tooltiptext">For pasting into the B0451 curator review</span>
+            </label>
+            <br />
+<!-- Bar -->
+            <label class="tooltip">
+                <button id="copy-button">Copy simple bar chart to clipboard</button>
+                <span class="tooltiptext">For pasting into a normal Steam user review</span>
+            </label>
+            <br />
+<!-- Radar -->
+            <label class="tooltip">
+                <button id="save-button">Save radar chart as image</button>
+                <span class="tooltiptext">For uploading to Steam artwork and posting in a B0451 forum review</span>
+            </label>
+        </div>
+
+        <script>
+//Show hide
+			let openCategory = null;
+
+			const headers = document.querySelectorAll('.category-header');
+
+				headers.forEach(header => {
+				header.addEventListener('click', () => {
+			const category = header.getAttribute('data-category');
+			const elementsContainer = document.querySelector(`.category-elements[data-category="${category}"]`);
+
+			if (openCategory !== null && openCategory !== category) {
+				const openElementsContainer = document.querySelector(`.category-elements[data-category="${openCategory}"]`);
+					openElementsContainer.classList.remove('show');
+				}
+
+					elementsContainer.classList.toggle('show');
+					openCategory = category;
+				});
+			});
+
+//Bar
+			const categoryNames = [
+				"Emergent",
+				"Non-linear",
+				"Reactive Plot",
+				"Immersive",
+				"Exploration",
+				"Aggressive combat",
+				"Strategic combat",
+				"RPG",
+				"Stealth",
+				  "Social",
+  				"Randomization"
+			];
+
+			const categoryDefinitions = [
+  				"Systems allow for unpredictable and surprising situations",
+  				"Design that allows for multiple paths or outcomes",
+  				"Plot that responds to the player's actions or choices",
+  				"Game world and mechanics that fully immerse the player",
+  				"Encouraged to explore the game world and its secrets",
+  				"Requires fast reflexes and quick decision-making",
+  				"Rewards strategic thinking and planning",
+  				"Systems focused on character development and progression",
+  				"Rewards stealth and avoidance over direct confrontation",
+  				"Emphasizes social interactions and relationships",
+  				"Randomness or chance elements"
+			];
+
+			const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+
+			const copyButton = document.querySelector("#copy-button");
+
+			copyButton.addEventListener("click", (event) => {
+  			const tempInput = document.createElement("textarea");
+				tempInput.value = getScoresOutput();
+  				document.body.appendChild(tempInput);
+  				tempInput.select();
+  				document.execCommand("copy");
+  				document.body.removeChild(tempInput);
+  				alert("Bar chart copied to clipboard!");
+			});
+
+			function getScoresOutput() {
+  				let output = "";
+  				const data = radarChart.data.datasets[0].data;
+  				const chartLabel = document.querySelector("#chart-label").value;
+  				const categories = data.map((score, index) => ({
+    				category: categoryNames[index],
+    				score,
+    				definition: categoryDefinitions[index]
+  				}));
+  				categories.sort((a, b) => b.score - a.score);
+  				categories.forEach(({ category, score, definition }) => {
+    				const scoreChart = "█".repeat(score) + "─".repeat(10 - score);
+    				output += `${category.padEnd(18)} ${scoreChart} ${definition}\n`;
+				});
+				output = `[code][url=https://steamcommunity.com/groups/beyond0451]Beyond 0451[/url] chart for ${chartLabel}\n` + output + `[/code]`;
+				return output;
+			}
+
+
+//Curator
+            const copyButton2 = document.querySelector("#copy-button-2");
+
+            copyButton2.addEventListener("click", (event) => {
+                const tempInput = document.createElement("textarea");
+					tempInput.value = getOtherOutput();
+					document.body.appendChild(tempInput);
+					tempInput.select();
+					document.execCommand("copy");
+					document.body.removeChild(tempInput);
+					alert("Curator review copied to clipboard!");
+            });
+
+            function getOtherOutput() {
+                let output = "";
+                const data = radarChart.data.datasets[0].data;
+                const chartLabel = document.querySelector("#chart-label").value;
+                const categoriesByScore = categoryNames.slice().sort((a, b) => data[categoryNames.indexOf(b)] - data[categoryNames.indexOf(a)]);
+                const filteredCategories = categoriesByScore.filter((categoryName) => data[categoryNames.indexOf(categoryName)] > 2);
+                filteredCategories.forEach((categoryName, index) => {
+                    const score = data[categoryNames.indexOf(categoryName)];
+                    if (score >= 7) {
+                        output += `High ${categoryName}`;
+                    } else if (score >= 4) {
+                        output += `Medium ${categoryName}`;
+                    } else {
+                        output += `Low ${categoryName}`;
+                    }
+                    if (index !== filteredCategories.length - 1) {
+                        output += " / ";
+                    }
+                });
+
+                return output;
+            }
+
+//Radar
+            const radarChartElement = document.querySelector("#radar-chart");
+            const data = {
+                labels: categoryNames,
+                datasets: [
+                    {
+                        label: document.querySelector("#chart-label").value,
+                        backgroundColor: "rgba(153, 102, 255, 0.2)",
+                        borderColor: "rgba(153, 102, 255, 1)",
+                        pointBackgroundColor: "rgba(153, 102, 255, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(153, 102, 255, 1)",
+                        data: Array(categoryNames.length).fill(0),
+                    },
+                ],
+            };
+            const options = {
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 10,
+                        ticks: {
+                            display: false,
+                            stepSize: 1,
+                        },
+                    },
+                },
+            };
+            const radarChart = new Chart(radarChartElement, {
+                type: "radar",
+                data,
+                options,
+            });
+            categoryCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener("click", (event) => {
+                    const category = event.target.name.split("-")[1];
+                    const categoryElements = document.querySelectorAll(`input[name^="category-${category}-element-"]`);
+                    const checkedElements = Array.from(categoryElements).filter((el) => el.checked);
+                    const score = checkedElements.length;
+                    const data = radarChart.data.datasets[0].data;
+                    data[category - 1] = score;
+                    radarChart.update();
+                });
+            });
+            const chartLabelInput = document.querySelector("#chart-label");
+            chartLabelInput.addEventListener("input", (event) => {
+                const chartLabel = chartLabelInput.value;
+                radarChart.data.datasets[0].label = chartLabel;
+                radarChart.update();
+            });
+            const saveButton = document.querySelector("#save-button");
+            saveButton.addEventListener("click", (event) => {
+                const canvas = document.querySelector("#radar-chart");
+                const dataURL = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.download = "radar-chart.png";
+                link.href = dataURL;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        </script>
+    </body>
+</html>

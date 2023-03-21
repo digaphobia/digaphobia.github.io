@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Beyond 0451 Review System V2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="header-box">
+      <h1>Beyond 0451 Review System V2</h1>
+    </div>
+    <div class="content-wrapper">
+      <div class="left-column">
+			<label class="gamename" for="chart-label"></label>
+			<input class="input" type="text" id="chart-label" name="chart-label" placeholder="Enter the game's name here..." />
+        <div id="output">
+		</div>
+      </div>
+      <div class="right-column">
+		<canvas id="radar-chart" width="550" height="550"></canvas>
+      </div>
+    </div>
+    <div class="footer-box">
+      <h2>Beyond 0451 Steam group</h2>
+<!-- Bar -->
+            <label title="For pasting into a normal Steam user review">
+                <button id="bar-button" class="button">Copy simple bar chart to clipboard</button>
+            </label>
+<!-- Fullreview -->
+			<label title="For adding the full category and element breakdown to a B0451 forum review">
+				<button id="full-review-button" class="button">Copy full review text to clipboard</button>
+            </label>
+<!-- Radar -->
+            <label class="For uploading to Steam artwork and posting to a B0451 forum review">
+                <button id="download-button" class="button">Save radar chart as image</button>
+            </label>
+<!-- Curator -->
+            <label title="For pasting into the B0451 curator review">
+                <button id="curator-button" class="button">Copy curator review to clipboard</button>
+            </label>
+    </div>
+	    <script src="showhide.js"></script>
+        <script src="full-list.js"></script>
+        <script src="display-full-list.js"></script>
+		<script src="beyondchart.js"></script>
+		<script src="bar-chart.js"></script>
+		<script src="full-summary.js"></script>
+		<script src="download-chart.js"></script>
+		<script src="curator-button.js"></script>
+  </body>
+</html>
+

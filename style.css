@@ -1,0 +1,135 @@
+body {
+  font-family: Montserrat, sans-serif;
+  color: #FFF;
+  background-color: #111;
+}
+
+.header-box {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #111;
+}
+
+.header-box h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #BB86FC;
+  margin: 0;
+}
+
+.content-wrapper {
+  width: 1200px;
+  margin: 45px auto 65px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left-column {
+  width: 600px;
+}
+
+.right-column {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#radar-chart {
+  display: block;
+}
+
+.footer-box {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  height: auto;
+  font-size: 24px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #111;
+}
+
+.footer-box h2 {
+  color: #BB86FC;
+  margin: 0;
+  font-size: 18px;
+}
+
+.category-container {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #BB86FC;
+  font-weight: bold;
+  padding: 1px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.category-title {
+  font-weight: bold;
+  padding: 1px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.elementcontainer {
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 1px;
+  margin-left: 0px;
+  position: relative;
+  background-color: #1e1e1e;
+}
+
+.gamename {
+  color: #BB86FC;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input[type=text] {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #BB86FC;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+input[type=text]:focus {
+  border: 5px solid #BB86FC;
+  outline: none;
+}
+
+.button {
+  background-color: #BB86FC;
+  border: 2px solid var(--input-border);
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

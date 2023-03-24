@@ -26,11 +26,15 @@ button.addEventListener("click", () => {
       checkboxesOrRadiosSelected = true;
     });
 
-    const checkedRadios = category.querySelector('input[type="radio"]:checked');
-    if (checkedRadios !== null) {
-      checkedElements += `[*]${checkedRadios.nextSibling.textContent}\n`;
-      checkboxesOrRadiosSelected = true;
-    }
+    const radioGroups = category.querySelectorAll('input[type="radio"]:checked');
+    const radioNames = [...new Set(Array.from(radioGroups).map((radio) => radio.name))];
+    radioNames.forEach((name) => {
+      const radios = category.querySelectorAll(`input[type="radio"][name="${name}"]:checked`);
+      if (radios.length > 0) {
+        checkedElements += `[*]${radios[0].nextSibling.textContent}\n`;
+        checkboxesOrRadiosSelected = true;
+      }
+    });
 
     if (checkedElements !== "") {
       summary += `[b]${categoryTitle}[/b]\n${categoryDefinition}\n[list]\n${checkedElements}[/list]\n\n`;
@@ -46,7 +50,7 @@ button.addEventListener("click", () => {
   if (isModalOpen) {
     return;
   }
-  
+
   // set flag variable to true since modal is about to open
   isModalOpen = true;
 
@@ -64,7 +68,7 @@ modal.style.width = "800px"; // set width to 800px
 modal.style.height = "600px"; // set height to 600px
 
   const output = document.createElement("textarea");
-output.style.width = "100%";
+  output.style.width = "100%";
 output.style.height = "90%";
 output.style.padding = "10px";
 output.style.fontSize = "16px";
@@ -78,12 +82,12 @@ output.style.resize = "none";
   modal.appendChild(output);
 
   const buttonContainer = document.createElement("div");
-  buttonContainer.style.display = "flex";
+    buttonContainer.style.display = "flex";
   buttonContainer.style.marginTop = "16px";
 
   const copyButton = document.createElement("button");
   copyButton.textContent = "Copy to Clipboard";
-copyButton.style.margin = "10px";
+  copyButton.style.margin = "10px";
 copyButton.style.padding = "10px";
 copyButton.style.backgroundColor = "#BB86FC";
 copyButton.style.color = "#fff";
@@ -98,7 +102,7 @@ copyButton.style.cursor = "pointer";
 
   const closeButton = document.createElement("button");
   closeButton.textContent = "Close";
-closeButton.style.margin = "10px";
+  closeButton.style.margin = "10px";
 closeButton.style.padding = "10px";
 closeButton.style.backgroundColor = "#f44336";
 closeButton.style.color = "#fff";

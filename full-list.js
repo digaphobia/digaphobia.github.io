@@ -1,7 +1,7 @@
 //list
 const category1 = {
     categoryname: "Emergent",
-    categorydefinition: "Systems allow for unpredictable and surprising situations",
+    categorydefinition: "Unscripted interaction of interdependent systems",
     categoryelements: [
         {
             categoryelement: "Player and AI are both subject to the same predictable environmental rules and constraints",
@@ -10,7 +10,7 @@ const category1 = {
         },
         {
             categoryelement: "Player can dynamically control individual systems",
-            elementtooltip: "Possession, mind control, hacked security robot, etc",
+            elementtooltip: "Possession, mind control, direct remote control of security robot, etc",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
@@ -44,7 +44,7 @@ const category1 = {
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Player controlled mechanics can be used for unintended purposes",
+            categoryelement: "Player controlled mechanics can be used for purposes other than their stated function",
             elementtooltip: "E.g., in Dishonored: the player can cast possession on a nearby AI while falling to avoid fall damage",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
@@ -56,32 +56,37 @@ const category1 = {
     ],
 };
 const category2 = {
-    categoryname: "Non-Linear",
-    categorydefinition: "Design that allows for multiple paths or outcomes",
+    categoryname: "Multiple Paths",
+    categorydefinition: "Level design features multiple routes to reach objectives",
     categoryelements: [
         {
-            categoryelement: "Missions / levels have non-linear objectives",
-            elementtooltip: "In-game objectives can be completed in any order",
+            categoryelement: "Non-linear level design",
+            elementtooltip: "Levels can be traversed using multiple paths, e.g., entry to a building using the door, the roof, the sewer, etc",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Story is non-linear",
-            elementtooltip: "Missions / levels can be completed in any order",
+            categoryelement: "Exploration is materially rewarding",
+            elementtooltip: "By visiting side areas the player gains something useful, e.g., XP, items, resources, information, lore, etc",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Open-ended / non-linear level design",
-            elementtooltip: "Required areas can be accessed through a variety of means e.g., assault, stealth, stacking physics objects, etc",
+            categoryelement: "Unscripted climbing or mantling in most or all areas",
+            elementtooltip: "Player can climb or mantle on most surfaces in the game",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Non-combat tools or abilities can be used to bypass physical obstacles",
-            elementtooltip: "Rope arrows, Blink, leg augmentation, etc",
+            categoryelement: "Skill-based movement",
+            elementtooltip: "Jumping and skill-based movement are used to navigate otherwise inaccessable areas, e.g., platforming, parkour",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "Tools / abilities can be used to bypass physical obstacles",
+            elementtooltip: "Rope arrows, Blink, G.L.O.O. cannon, jump augmentation, etc",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
             categoryelement: "Non-item physics objects can be used to bypass physical obstacles",
-            elementtooltip: "Crate stacking, plank placement to climb, etc",
+            elementtooltip: "Crate stacking, a plank to make a ramp, etc",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
@@ -95,6 +100,11 @@ const category2 = {
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
+            categoryelement: "Destructible barriers",
+            elementtooltip: "Player can destroy doors, walls, or surfaces to access areas",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
             categoryelement: "Backtracking",
             elementtooltip: "Ability to return to previously explored levels or areas after moving past them. E.g., Bioshock",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
@@ -102,9 +112,60 @@ const category2 = {
     ],
 };
 const category3 = {
-    categoryname: "Reactive Plot",
-    categorydefinition: "The game responds dynamically to actions or decisions",
+    categoryname: "Multiple Solutions",
+    categorydefinition: "Multiple methods to solve problems and complete objectives",
     categoryelements: [
+        {
+            categoryelement: "Non-linear objectives",
+            elementtooltip: "Quest objectives can be completed in any order",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "Objectives can be completed using multiple strategies",
+            elementtooltip: "Problems have more than one solution, players are able to use all means at their disposal to progress",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "NPCs can be interacted with in multiple ways to progress",
+            elementtooltip: "E.g., by sneaking, violence, talking, disguise, etc.",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "Physical barriers can be interacted with in multiple ways to progress",
+            elementtooltip: "E.g., a door opened by a key or be lockpicked, a code or be hacked, broken by force, avoided through exploration, etc",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "Physics can be used to solve problems",
+            elementtooltip: "Manipulation of the game's physics system can be used to progress, e.g., in Neverlooted Dungeon: pressure plates must have objects placed on them to be activated",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+		{
+            categoryelement: "Tools / gadgets / abilities can be used to solve problems",
+            elementtooltip: "Thoughtful or creative use of a tool or ability to progress. E.g., in Prey: the G.L.O.O. cannon, in Dishonored: possession",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+		{
+            categoryelement: "Platforming can be used to solve problems",
+            elementtooltip: "Jumping and skill-based movement are used to navigate otherwise inaccessable areas",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+        {
+            categoryelement: "Puzzles, riddles and logical problems",
+            elementtooltip: "Puzzles which require logic to solve. E.g., in Dishonored 2: the Jindosh lock",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
+    ],
+};
+const category4 = {
+    categoryname: "Reactive Plot",
+    categorydefinition: "Game reflects player's prior decisions and actions",
+    categoryelements: [
+        {
+            categoryelement: "Story is non-linear",
+            elementtooltip: "Missions / levels can be completed in any order",
+            checkbox: true, radio: false, value: 1, groupname: "chkbx"
+        },
         {
             categoryelement: "Player actions and decisions don't meaningfully alter plot or objectives",
             elementtooltip: "Binary choices are present, but don't have meaningful effects or consequences on gameplay or plot",
@@ -137,13 +198,12 @@ const category3 = {
         },
         {
             categoryelement: "Multiple endings based on actions and decisions made throughout the game",
-            elementtooltip:
-                "More than 2 endings based on player actions and decisions throughout the playthrough; e.g., in The Stanley Parable: multiple possible endings based on the player's decisions and exploration of the game's environment",
+            elementtooltip: "More than 2 endings based on player actions and decisions throughout the playthrough; e.g., in The Stanley Parable: multiple possible endings based on the player's decisions and exploration of the game's environment",
             radio: true, checkbox: false, value: 3, groupname: "endingsradio",
         },
     ],
 };
-const category4 = {
+const category5 = {
     categoryname: "Interactive",
     categorydefinition: "Game world and mechanics that immerse the player",
     categoryelements: [
@@ -189,68 +249,12 @@ const category4 = {
         },
         {
             categoryelement: "Attack no one",
-            elementtooltip: "Player can choose to play as a pacifist and is not forced to attack or kill",
+            elementtooltip: "Player can choose to play as a pacifist and is not forced to attack or kill anything",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
             categoryelement: "Attack everyone",
-            elementtooltip: "All AI can be attacked and will respond appropriately",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-    ],
-};
-const category5 = {
-    categoryname: "Exploration",
-    categorydefinition: "Player is encouraged to explore the world and its secrets",
-    categoryelements: [
-        {
-            categoryelement: "Play spaces have non-required side areas / passages",
-            elementtooltip: "Paths that are not required to complete the game, but encourage exploration",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Exploration is materially rewarding",
-            elementtooltip: "Player gains experience points, discovers items, resources, information, lore, etc",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Exploration reveals novel methods to approach objectives",
-            elementtooltip: "Discovering alternate paths, strategies, and solutions through exploration",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Scripted climbing / mantling in predetermined locations",
-            elementtooltip: "Predefined locations where the player can climb or mantle",
-            checkbox: false, radio: true, value: 1, groupname: "climbradio"
-        },
-        {
-            categoryelement: "Unscripted climbing or mantling in most or all areas",
-            elementtooltip: "Player can climb or mantle on most surfaces in the game",
-            checkbox: false, radio: true, value: 2, groupname: "climbradio"
-        },
-        {
-            categoryelement: "Platforming / parkour can be used to reach passages / areas",
-            elementtooltip: "Player can use parkour mechanics to reach hidden areas",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Destruction can be used to reach passages / areas",
-            elementtooltip: "Player can destroy walls or surfaces to reveal hidden areas",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Secret areas",
-            elementtooltip: "Hidden areas that reward exploration with unique items or secrets",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Secret levels",
-            elementtooltip: "Hidden levels that can only be accessed through exploration",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Easter eggs",
-            elementtooltip: "References, jokes, or messages hidden by the developers",
+            elementtooltip: "Anything can be attacked and will respond appropriately",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
     ],
@@ -423,69 +427,13 @@ const category8 = {
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Equippable disguises can be used for infiltration",
-            elementtooltip: "Player can use disguises to avoid detection in restricted areas",
+            categoryelement: "Disguises / possession / mimicry can be used for infiltration",
+            elementtooltip: "Player can use equippable disguises or possess / mimic NPCs to avoid detection in restricted areas",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
     ],
 };
 const category9 = {
-    categoryname: "Role Play",
-    categorydefinition: "Systems focused on character development and progression",
-    categoryelements: [
-        {
-            categoryelement: "Character creation",
-            elementtooltip: "e.g., gender / body appearance / backstory",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Aesthetic appearence customization",
-            elementtooltip: "e.g., choose clothing / accessories which don't affect gameplay",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Player must choose a character class",
-            elementtooltip: "Players must choose a character class (e.g., warrior, mage, rogue) that determines their abilities and playstyle",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Wearables with stat modifiers",
-            elementtooltip: "Players can equip wearable items that modify their character's stats (e.g. a coat that provides +2 warmth and +1 noise)",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Powers / Abilities",
-            elementtooltip: "Activatable non-combat abilities e.g., double jump, increased strength",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "XP",
-            elementtooltip: "Players earn experience points completing tasks",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Selectable skills / perks",
-            elementtooltip: "Players can choose specific skills or perks to improve their character's abilities as they level up",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Skill checks",
-            elementtooltip: "Players must have a certain level of a specific skill (e.g. level 3 hacker) to pass certain obstacles or access certain areas",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Crafting",
-            elementtooltip: "Players can gather materials and craft new items / equipment / consumables",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Party management",
-            elementtooltip: "Players can recruit and manage a party of allies, giving orders and dismissing members as needed",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-    ],
-};
-const category10 = {
     categoryname: "Social",
     categorydefinition: "Emphasizes social interactions and relationships",
     categoryelements: [
@@ -536,104 +484,48 @@ const category10 = {
         },
     ],
 };
-const category11 = {
-    categoryname: "Puzzle",
-    categorydefinition: "Use logic and problem-solving to overcome obstacles",
+const category10 = {
+    categoryname: "Role Play",
+    categorydefinition: "Systems focused on character development and progression",
     categoryelements: [
         {
-            categoryelement: "Puzzles are present but are optional",
-            elementtooltip: "The game includes some puzzles, but they are not required for progression or can be avoided by other means",
-            checkbox: false, radio: true, value: 1, groupname: "puzzleradio"
-        },
-        {
-            categoryelement: "Some puzzle solving is required",
-            elementtooltip: "The game includes occasional puzzles which are required for progression, but they are not a main componenent of the game",
-            checkbox: false, radio: true, value: 2, groupname: "puzzleradio"
-        },
-        {
-            categoryelement: "Puzzles are a main component of the game",
-            elementtooltip: "The gameplay is designed around solving puzzles, e.g., Portal, Ctrl Alt Ego, etc",
-            checkbox: false, radio: true, value: 3, groupname: "puzzleradio"
-        },
-        {
-            categoryelement: "Hacking, locks, access codes, levers, switches, explosives, etc",
-            elementtooltip: "Progression by manipulating static game mechanics or systems. E.g., picking a lock or finding a key, blowing up a door or wall, etc",
+            categoryelement: "Character creation",
+            elementtooltip: "e.g., gender / body appearance / backstory",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Physics puzzles",
-            elementtooltip: "Puzzles which require manipulation of the game's physics system, e.g., in Neverlooted Dungeon: pressure plates must have objects placed on them to be activated",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-		{
-            categoryelement: "Tool, gadget, ability puzzles",
-            elementtooltip: "Thoughtful or creative use of a tool or ability to progress through an area. E.g., in Prey: the G.L.O.O. cannon, in Dishonored: possession",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-		{
-            categoryelement: "Platforming puzzles",
-            elementtooltip: "Jumping and skill-based movement are used to navigate otherwise inaccessable areas",
+            categoryelement: "Player is forced to choose a character class",
+            elementtooltip: "Players must choose a character class (e.g., warrior, mage, rogue) that determines their abilities and playstyle",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Room puzzles",
-            elementtooltip: "Areas are designed to be 'solved' strategically using one or more methods. E.g., Portal",
+            categoryelement: "Wearables with stat modifiers",
+            elementtooltip: "Players can equip wearable items that modify their character's stats (e.g. a coat that provides +2 warmth and +1 noise)",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Riddles and logic puzzles",
-            elementtooltip: "Puzzles which require logic to solve. E.g., in Dishonored 2: the Jindosh lock",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-    ],
-};
-const category12 = {
-    categoryname: "Randomization",
-    categorydefinition: "Presence of RNG, procedural generation, chance elements",
-    categoryelements: [
-        {
-            categoryelement: "Randomization of item placement / loot / codes / weapons",
-            elementtooltip: "Items, loot, codes, or weapons are randomly placed in the game world, giving players a different experience each time they play",
+            categoryelement: "XP",
+            elementtooltip: "Players earn experience points completing tasks",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Randomization of AI / interactive systems placement",
-            elementtooltip: "AI enemies or interactive systems are randomly placed in the game world, providing a different challenge each time the game is played",
+            categoryelement: "Selectable skills / perks",
+            elementtooltip: "Players can choose specific skills or perks to improve their character's abilities as they level up",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Randomization of pre-designed room placement",
-            elementtooltip: "Pre-made rooms in the game are randomly arranged, creating a unique layout each time the game is played",
+            categoryelement: "Skill checks",
+            elementtooltip: "Players must have a certain level of a specific skill (e.g. level 3 hacker) to pass certain obstacles or access certain areas",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Procedurally generated areas",
-            elementtooltip: "The game world is generated using procedural algorithms, resulting in a unique experience for each playthrough",
+            categoryelement: "Crafting",
+            elementtooltip: "Players can gather materials and craft new items / equipment / consumables",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
         {
-            categoryelement: "Dice rolls",
-            elementtooltip: "Random chance elements are used in the game, such as rolling dice to determine the outcome of certain events",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Areas must be completed in one sitting",
-            elementtooltip: "Players must complete the game's areas in one playthrough, without the ability to save or create checkpoints",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Permadeath",
-            elementtooltip: "Players are forced to start over from the beginning of the game if they die",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Permadeath with persistent body and inventory",
-            elementtooltip: "Player loses everything upon death, but the dead body can be found and looted",
-            checkbox: true, radio: false, value: 1, groupname: "chkbx"
-        },
-        {
-            categoryelement: "Turn-based movement or actions",
-            elementtooltip: "Player takes turns moving or performing actions",
+            categoryelement: "Manage allied NPCs",
+            elementtooltip: "Players can recruit and manage NPC allies, giving orders and dismissing members as needed",
             checkbox: true, radio: false, value: 1, groupname: "chkbx"
         },
     ],

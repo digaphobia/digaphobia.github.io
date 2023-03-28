@@ -2,50 +2,55 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Beyond 0451 Review System BETAV2</title>
+    <title>Beyond 0451 System BETAV2.1</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script src="feedback.js"></script>
   </head>
   <body>
     <div class="header-box">
-      <h1>Beyond 0451 Review System BETAV2</h1>
-	  <label title="Do you have suggestions?">
-        <button id="header-button" class="headerbutton">Give Feedback!</button>
-      </label>
+      <h1>Beyond 0451 System BETAV2.1</h1>
     </div>
     <div class="content-wrapper">
       <div class="left-column">
+		<b>This tool is designed to help examine, compare and highlight games with immersive sim characteristics.</b><br /><br />
+		Fill out the form, then use the buttons at the bottom of the page to create sharable versions of the summary.<br />
 			<label class="gamename" for="chart-label"></label>
 			<input class="input" type="text" id="chart-label" name="chart-label" placeholder="Enter the game's name here..." />
         <div id="output">
 		</div>
       </div>
       <div class="right-column">
-		<canvas id="radar-chart" width="550" height="550"></canvas>
+		<canvas id="radar-chart" width="600" height="500"></canvas><br />
+		<a href="https://steamcommunity.com/groups/beyond0451/discussions/0/3819654644915442723/" target="_blank">Click here</a> for more information on this project.<br /><br />
+		<b>Please let us know what you think.</b><br />
+		Have another category idea? Another element? A good example?<br />
+		Tell us here:<br />
+			<a href='https://steamcommunity.com/groups/beyond0451' target='_blank'>Beyond 0451 on Steam</a><br />
+			<a href='https://twitter.com/Beyond_0451' target='_blank'>Beyond 0451 on Twitter</a><br />
+			<a href='https://www.reddit.com/user/Beyond_0451' target='_blank'>Beyond 0451 on Reddit</a><br />
       </div>
     </div>
     <div class="footer-box">
       <h2>created by the <a href="https://steamcommunity.com/groups/beyond0451" target="_blank">Beyond 0451 Steam group</a></h2>
 <!-- Bar -->
-            <label title="For pasting into a normal Steam user review">
+            <label title="A Steam-compatible ASCII chart to use in a game review">
                 <button id="bar-button" class="button">Get ASCII chart</button>
             </label>
 <!-- Fullreview -->
-			<label title="For adding the full category and element breakdown to a B0451 forum review">
-				<button id="full-review-button" class="button">Get full review text</button>
+			<label title="A Steam-compatible category and element breakdown for the B0451 forum or elsewhere">
+				<button id="full-review-button" class="button">Get text summary</button>
             </label>
 <!-- Radar -->
-            <label class="For uploading to Steam artwork and posting to a B0451 forum review">
-                <button id="download-button" class="button">Save radar chart image</button>
+            <label class="An image of the complete radar chart for the B0451 forum or elsewhere">
+                <button id="download-button" class="button">Get radar chart</button>
             </label>
 <!-- Curator -->
-            <label title="For pasting into the B0451 curator review">
-                <button id="curator-button" class="button">Get curator review</button>
+            <label title="A very short text summary specifically designed for the Steam curator">
+                <button id="curator-button" class="button">Get curator text</button>
             </label>
 <!-- Complete summary -->
-            <label title="Without considering user inputs">
+            <label title="This is a complete summary of all the categories and elements without regard for checkboxes and radios">
                 <button id="complete-summary" class="button">Get complete summary</button>
             </label>
     </div>

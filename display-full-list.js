@@ -46,7 +46,7 @@ return categoryDiv;
 }
 
 //array of categories
-const categories = [category1, category2, category3, category4, category5, category6, category7, category8, category9, category10, category11, category12];
+const categories = [category1, category2, category3, category4, category5, category6, category7, category8, category9, category10];
 
 //loop through categories and add to output div
 categories.forEach((category) => {

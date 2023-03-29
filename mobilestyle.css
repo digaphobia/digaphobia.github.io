@@ -1,0 +1,136 @@
+body {
+ font-family: Montserrat, sans-serif;
+ color: #fff;
+ background-color: #111;
+ margin: 0;
+ padding: 0;
+}
+
+.header-box {
+width: 100%;
+text-align: center;
+padding: 10px;
+background-color: #111;
+background-image: url("headerbg.png");
+background-repeat: no-repeat;
+background-position: center top;
+}
+
+.header-box h1 {
+font-size: 24px;
+font-weight: bold;
+color: white;
+text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+margin: 0;
+}
+
+.footer-box {
+ width: 100%;
+ margin: 0 auto;
+ text-align: center;
+ padding: 5px;
+ height: auto;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ z-index: 1;
+ background-color: #111;
+}
+
+.content-wrapper {
+width: 100%;
+ margin: auto auto 128px;
+}
+
+.category-container {
+width: 90%;
+background-color: #1e1e1e;
+color: #bb86fc;
+font-weight: bold;
+padding: 1px 10px;
+border-radius: 5px;
+font-size: 12px;
+margin-bottom: 5px;
+font-weight: normal;
+}
+
+.right-column {
+	text-align: center;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 600px;
+}
+
+.category-title {
+font-weight: bold;
+padding: 1px;
+border-radius: 5px;
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.elementcontainer {
+color: #fff;
+font-weight: normal;
+font-size: 12px;
+padding: 1px;
+margin-left: 0px;
+position: relative;
+background-color: #1e1e1e;
+}
+
+.gamename {
+color: #bb86fc;
+font-weight: bold;
+border-radius: 5px;
+font-size: 16px;
+}
+
+.input[type="text"] {
+width: 90%;
+background-color: #1e1e1e;
+color: #bb86fc;
+font-weight: bold;
+padding: 10px;
+border: 2px solid var(--input-border);
+border-radius: 5px;
+font-size: 16px;
+margin-top: 10px;
+margin-bottom: 5px;
+}
+
+input[type="text"]:focus {
+border: 2px solid #bb86fc;
+outline: none;
+}
+
+.button {
+background-color: transparent;
+border: 1px solid white;
+color: #bb86fc;
+padding: 5px 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+font-weight: bold;
+display: inline-block;
+}
+
+a {
+color: #bb86fc;
+text-decoration: none;
+font-weight: bold;
+}
+
+a:hover {
+text-decoration: none;
+color: white;
+}

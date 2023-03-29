@@ -1,169 +1,261 @@
 body {
-  font-family: Montserrat, sans-serif;
-  color: #FFF;
-  background-color: #111;
+ font-family: Montserrat, sans-serif;
+ color: #fff;
+ background-color: #111;
 }
 
 .header-box {
-  width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0px;
-  height: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background-color: #111;
-  background-image: url('headerbg.png');
-  background-repeat: no-repeat;
-  background-position: center top;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ width: 1200px;
+ margin: 0 auto;
+ text-align: center;
+ padding: 0px;
+ height: 80px;
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 1;
+ background-color: #111;
+ background-image: url("headerbg.png");
+ background-repeat: no-repeat;
+ background-position: center top;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
-
 .header-box h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: white;
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
-  margin: 0;
+ font-size: 36px;
+ font-weight: bold;
+ color: white;
+ text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+ margin: 0;
 }
 
 .content-wrapper {
-  width: 1200px;
-  margin: 85px auto 70px;
-  display: flex;
+ width: 1200px;
+ margin: 85px auto 70px;
+ display: flex;
 }
 
 .left-column {
-  width: 600px;
+ width: 600px;
 }
 
 .right-column {
-  width: 600px;
-  text-align: center;
+ width: 600px;
+ text-align: center;
 }
 
 .footer-box {
-  width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 5px;
-  height: auto;
-  font-size: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background-color: #111;
+ width: 1200px;
+ margin: 0 auto;
+ text-align: center;
+ padding: 5px;
+ height: auto;
+ font-size: 20px;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ z-index: 1;
+ background-color: #111;
 }
 
 .footer-box h2 {
-  color: white;
-  margin: 3px;
-  font-size: 16px;
+ color: white;
+ margin: 3px;
+ font-size: 16px;
 }
 
 .category-container {
-  width: 90%;
-  background-color: #1e1e1e;
-  color: #BB86FC;
-  font-weight: bold;
-  padding: 1px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-bottom: 5px;
-  font-weight: normal;
+ width: 90%;
+ background-color: #1e1e1e;
+ color: #bb86fc;
+ font-weight: bold;
+ padding: 1px 10px;
+ border-radius: 5px;
+ font-size: 12px;
+ margin-bottom: 5px;
+ font-weight: normal;
 }
 
 .category-title {
-  font-weight: bold;
-  padding: 1px;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 5px;
+ font-weight: bold;
+ padding: 1px;
+ border-radius: 5px;
+ font-size: 16px;
+ margin-bottom: 5px;
 }
 
 .elementcontainer {
-  color: #fff;
-  font-weight: normal;
-  font-size: 12px;
-  padding: 1px;
-  margin-left: 0px;
-  position: relative;
-  background-color: #1e1e1e;
+ color: #fff;
+ font-weight: normal;
+ font-size: 12px;
+ padding: 1px;
+ margin-left: 0px;
+ position: relative;
+ background-color: #1e1e1e;
 }
 
 .gamename {
-  color: #BB86FC;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 16px;
+ color: #bb86fc;
+ font-weight: bold;
+ border-radius: 5px;
+ font-size: 16px;
 }
 
-.input[type=text] {
-  width: 90%;
-  background-color: #1e1e1e;
-  color: #BB86FC;
-  font-weight: bold;
-  padding: 10px;
-  border: 2px solid var(--input-border);
-  border-radius: 5px;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 5px;
+.input[type="text"] {
+ width: 90%;
+ background-color: #1e1e1e;
+ color: #bb86fc;
+ font-weight: bold;
+ padding: 10px;
+ border: 2px solid var(--input-border);
+ border-radius: 5px;
+ font-size: 20px;
+ margin-top: 10px;
+ margin-bottom: 5px;
 }
 
-input[type=text]:focus {
-  border: 2px solid #BB86FC;
-  outline: none;
+input[type="text"]:focus {
+ border: 2px solid #bb86fc;
+ outline: none;
 }
 
 .button {
-  background-color: transparent;
-  border: 1px solid white;
-  color: #BB86FC;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
+ background-color: transparent;
+ border: 1px solid white;
+ color: #bb86fc;
+ padding: 5px 10px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ font-weight: bold;
+ display: inline-block;
 }
 
 a {
-  color: #BB86FC;
-  text-decoration: none;
-  font-weight: bold;
+ color: #bb86fc;
+ text-decoration: none;
+ font-weight: bold;
 }
 
 a:hover {
-  text-decoration: none;
-  color: white;
+ text-decoration: none;
+ color: white;
 }
 
-.popup {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: black;
-	border: 1px solid black;
-	z-index: 999;
-	padding: 10px;
+/**
+ * Tooltip Styles
+ */
+
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip {
+ position: relative;
+ cursor: pointer;
 }
-.popup ul {
-	list-style: none;
-	text-align: center;
-	padding: 0;
-	margin: 0;
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+ position: absolute;
+ visibility: hidden;
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+ opacity: 0;
+ -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+ -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+ transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+ -webkit-transform: translate3d(0, 0, 0);
+ -moz-transform: translate3d(0, 0, 0);
+ transform: translate3d(0, 0, 0);
+ pointer-events: none;
 }
-.popup li {
-	margin-bottom: 5px;
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+ visibility: visible;
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+ opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+ z-index: 1001;
+ border: 6px solid transparent;
+ background: transparent;
+ content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+ z-index: 1000;
+ padding: 8px;
+ width: 300px;
+ background-color: #000;
+ color: #fff;
+ content: attr(data-tooltip);
+ font-size: 14px;
+ line-height: 1.2;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+ bottom: 100%;
+ left: 50%;
+}
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+ margin-left: -6px;
+ margin-bottom: -12px;
+ border-top-color: #000;
+ border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+ margin-left: -80px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+ -webkit-transform: translateY(-12px);
+ -moz-transform: translateY(-12px);
+ transform: translateY(-12px);
 }

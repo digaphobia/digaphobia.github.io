@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sinno generator v1</title>
+  <style>
+    body {
+      background-color: #333;
+      color: #fff;
+    }
+    input, select {
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 4px;
+      font-size: 16px;
+    }
+    input::placeholder, select {
+      color: #bbb;
+    }
+    .input-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .input-rows > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .input-rows > div:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    .add-row, .delete-row {
+      background-color: #ccc;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .add-row:hover, .delete-row:hover {
+      background-color: #ddd;
+    }
+    .add-row {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+	<div id="sales">
+		<h1>Sales:</h1>
+		<div id="inputs-container"></div>
+	</div>
+	<div id="copy"><button id="salecopy" class="button">Get Sale summary</button></div>
+	<div id="upcoming">
+		<h1>Upcoming:</h1>
+		<div id="inputs-container2"></div>
+	</div>
+	<div id="copy"><button id="upcomingcopy" class="button">Get Upcoming summary</button></div>
+
+    <script>
+	  // Sale games
+	  
+function generateInputs() {
+  // create the first row with month and year dropdowns
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const years = [];
+  for (let year = 2023; year <= 2040; year++) {
+    years.push(year);
+  }
+  const monthSelect = document.createElement('select');
+  monthSelect.classList.add('month');
+  for (let i = 0; i < months.length; i++) {
+    const option = document.createElement('option');
+    option.textContent = months[i];
+    monthSelect.appendChild(option);
+  }
+  const yearSelect = document.createElement('select');
+  yearSelect.classList.add('year');
+  for (let i = 0; i < years.length; i++) {
+    const option = document.createElement('option');
+    option.textContent = years[i];
+    yearSelect.appendChild(option);
+  }
+  const row1 = document.createElement('div');
+  row1.appendChild(monthSelect);
+  row1.appendChild(yearSelect);
+
+  // create the second row with text inputs
+  const row2 = createTextInputRow('saledate', 'Sale dates', 'salegame', 'Name of game', 'gamelink', 'Link to sale');
+
+  // create the add row button
+  const addRowButton = document.createElement('button');
+  addRowButton.textContent = '+ Add Row';
+  addRowButton.addEventListener('click', function() {
+    const newRow = createTextInputRow('saledate', 'Sale dates', 'salegame', 'Name of game', 'gamelink', 'Link to sale');
+    const removeRowButton = createRemoveRowButton(newRow);
+    newRow.appendChild(removeRowButton);
+    newRow.style.marginTop = '10px'; // Add margin between rows
+    document.getElementById('inputs-container').insertBefore(newRow, addRowButton);
+  });
+
+  // add the first two rows and the add row button to the container
+  const container = document.getElementById('inputs-container');
+  container.appendChild(row1);
+  container.appendChild(row2);
+  container.appendChild(addRowButton);
+
+  // create a function to generate the remove row button for each row
+  function createRemoveRowButton(row) {
+    const removeRowButton = document.createElement('button');
+    removeRowButton.textContent = '-';
+    removeRowButton.addEventListener('click', function() {
+      container.removeChild(row);
+    });
+    return removeRowButton;
+  }
+
+  // create a function to generate a text input row with the given classes and placeholders
+  function createTextInputRow(class1, placeholder1, class2, placeholder2, class3, placeholder3) {
+    const row = document.createElement('div');
+    const input1 = createTextInput(class1, placeholder1);
+    const input2 = createTextInput(class2, placeholder2);
+    const input3 = createTextInput(class3, placeholder3);
+    row.appendChild(input1);
+    row.appendChild(input2);
+    row.appendChild(input3);
+    return row;
+  }
+
+  // create a function to generate a text input with the given class and placeholder
+  function createTextInput(className, placeholder) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.classList.add(className);
+    input.placeholder = placeholder;
+    return input;
+  }
+}
+
+generateInputs();
+
+// Copy sale
+
+// get the button element
+const copyButton = document.getElementById('salecopy');
+
+// add event listener to the button
+copyButton.addEventListener('click', function() {
+
+  // get the month and year values from the dropdowns
+  const month = document.querySelector('.month').value;
+  const year = document.querySelector('.year').value;
+
+  // create the markdown summary
+  let markdown = `# Sales for ${month} ${year}\n\n`;
+
+  // loop through each salegame entry
+  const saleGames = document.querySelectorAll('.saledate');
+  for (let i = 0; i < saleGames.length; i++) {
+    const saledate = saleGames[i].value;
+    const salegame = saleGames[i].parentNode.querySelector('.salegame').value;
+    const gamelink = saleGames[i].parentNode.querySelector('.gamelink').value;
+    markdown += `* ${saledate} -- [${salegame}](${gamelink})\n`;
+  }
+
+  // copy the markdown to the clipboard
+  navigator.clipboard.writeText(markdown);
+
+});
+
+
+// Upcoming games
+
+
+function generateInputs2() {
+  // create the first row with text inputs
+  const releaseDateInput = createTextInput('releasedate', 'Release date');
+  const releaseNameInput = createTextInput('releasename', 'Name of game');
+  const row1 = document.createElement('div');
+  row1.appendChild(releaseDateInput);
+  row1.appendChild(releaseNameInput);
+
+  // create the second row with text inputs
+  const platforms = [
+    { id: 'steam', placeholder: 'Steam' },
+    { id: 'itchio', placeholder: 'Itch.io' },
+    { id: 'epic', placeholder: 'Epic' },
+    { id: 'playstation', placeholder: 'Playstation' },
+    { id: 'xbox', placeholder: 'Xbox' },
+    { id: 'gamepass', placeholder: 'Game Pass' },
+    { id: 'switch', placeholder: 'Switch' }
+  ];
+  const row2 = document.createElement('div');
+  for (let i = 0; i < platforms.length; i++) {
+    const input = createTextInput(platforms[i].id, platforms[i].placeholder);
+    input.id = platforms[i].id;
+    row2.appendChild(input);
+  }
+
+  // create the add row button
+  const addRowButton = document.createElement('button');
+  addRowButton.textContent = '+ Add Row';
+  addRowButton.addEventListener('click', function() {
+    const newRow1 = document.createElement('div');
+    const newRow2 = document.createElement('div');
+    newRow1.appendChild(createTextInput('releasedate', 'Release date'));
+    newRow1.appendChild(createTextInput('releasename', 'Name of game'));
+    newRow2.appendChild(createTextInput('steam', 'Steam'));
+    newRow2.appendChild(createTextInput('itchio', 'Itch.io'));
+    newRow2.appendChild(createTextInput('epic', 'Epic'));
+    newRow2.appendChild(createTextInput('playstation', 'Playstation'));
+    newRow2.appendChild(createTextInput('xbox', 'Xbox'));
+    newRow2.appendChild(createTextInput('gamepass', 'Game Pass'));
+    newRow2.appendChild(createTextInput('switch', 'Switch'));
+    const removeRowButton = createRemoveRowButton(newRow1, newRow2);
+    newRow1.appendChild(removeRowButton);
+    newRow1.style.marginTop = '10px'; // add margin between rows
+    const container = document.getElementById('inputs-container2');
+    container.insertBefore(newRow1, addRowButton);
+    container.insertBefore(newRow2, addRowButton);
+  });
+
+  // add the first row and the add row button to the container
+  const container = document.getElementById('inputs-container2');
+  container.appendChild(row1);
+  container.appendChild(row2);
+  container.appendChild(addRowButton);
+
+  // create a function to generate the remove row button for each row
+  function createRemoveRowButton(row1, row2) {
+    const removeRowButton = document.createElement('button');
+    removeRowButton.textContent = '-';
+    removeRowButton.addEventListener('click', function() {
+      container.removeChild(row1);
+      container.removeChild(row2);
+      container.removeChild(removeRowButton);
+    });
+    return removeRowButton;
+  }
+
+  // create a function to generate a text input with the given class and placeholder
+  function createTextInput(id, placeholder) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.classList.add(id);
+    input.placeholder = placeholder;
+    return input;
+  }
+}
+
+generateInputs2();
+
+// Copy upcoming
+
+// select the 'upcomingcopy' button and add a click event listener
+document.getElementById('upcomingcopy').addEventListener('click', function() {
+  // create the summary string
+  let summary = '# Upcoming releases:\n\n';
+  const rows = document.querySelectorAll('#inputs-container2 > div');
+  for (let i = 0; i < rows.length; i += 2) {
+    const releaseDate = rows[i].querySelector('.releasedate').value;
+    const releaseName = rows[i].querySelector('.releasename').value;
+    if (releaseDate && releaseName) {
+      summary += `- ${releaseDate} -- ${releaseName}`;
+      const platforms = rows[i + 1].querySelectorAll('input');
+      for (let j = 0; j < platforms.length; j++) {
+        if (platforms[j].value) {
+          summary += ` [${platforms[j].placeholder}](${platforms[j].value})`;
+        }
+      }
+      summary += '\n';
+    }
+  }
+
+  // copy the summary to the clipboard
+  const textarea = document.createElement('textarea');
+  textarea.value = summary;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+});
+
+
+
+
+
+
+  </script>
+</body>
+</html>

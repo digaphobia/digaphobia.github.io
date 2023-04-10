@@ -5,8 +5,10 @@ const categoryTitles = [...document.querySelectorAll(".category-title")].map((ca
 chartLabelInput.addEventListener("input", (event) => {
  const chartLabel = event.target.value;
  data.datasets[0].label = chartLabel;
+ radarChart.options.plugins.legend.labels.text = chartLabel; // Update legend label
  radarChart.update();
 });
+
 
 // Initialize the data object with default values
 let data = {
@@ -62,7 +64,10 @@ const config = {
     },
     grid: {
      circular: true,
-     color: "grey",
+     color: "rgba(255, 255, 255, 0.1)",
+    },
+    angleLines: {
+     color: 'rgba(255, 255, 255, 0.2)'
     },
     pointLabels: {
      color: "white",

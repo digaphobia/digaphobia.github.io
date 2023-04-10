@@ -5,14 +5,14 @@ const category1 = {
  categoryelements: [
   {
    categoryelement: "Player and AI are both subject to the same predictable environmental rules and constraints",
-   elementtooltip: "Player can steal a guard's key and lock them out of an area, AI and player can fall victim to environmental traps / hazards, etc",
+   elementtooltip: "Player can steal a guard's key and lock them out of an area, AI and player can both fall victim to environmental traps / hazards, etc",
    checkbox: true,
    radio: false,
    value: 1,
    groupname: "chkbx",
   },
   {
-   categoryelement: "Player can dynamically control individual systems",
+   categoryelement: "Player can dynamically control individual AI systems",
    elementtooltip: "Possession, mind control, direct remote control of security robot, etc",
    checkbox: true,
    radio: false,
@@ -20,7 +20,7 @@ const category1 = {
    groupname: "chkbx",
   },
   {
-   categoryelement: "Environments or environmental elements can be altered by player action",
+   categoryelement: "Environment or environmental elements can be altered by player action",
    elementtooltip: "Breaking down a door, blasting a hole in a wall, breaking a pillar to collapse a ceiling, etc",
    checkbox: true,
    radio: false,
@@ -53,7 +53,7 @@ const category1 = {
   },
   {
    categoryelement: "AI responds to dynamic, unscripted physics interaction",
-   elementtooltip: "Paths can be blocked by furniture; NPCs can damaged by thrown objects, knocked over, kicked off a cliff, etc",
+   elementtooltip: "Paths can be blocked by furniture, NPCs can damaged by thrown objects, knocked over, kicked off a cliff, etc",
    checkbox: true,
    radio: false,
    value: 1,
@@ -61,14 +61,14 @@ const category1 = {
   },
   {
    categoryelement: "Player may subvert / avoid required gameplay",
-   elementtooltip: "To do things the developer did not intend but also doesn't strictly prohibit, e.g., Deus Ex: Ion Storm expected bosses to be killed, however player can distract them, then simply run past to avoid a fight, etc",
+   elementtooltip: "To do things the developer did not intend but also doesn't strictly prohibit, e.g., in Deus Ex: Ion Storm expected bosses to be killed, however player can distract them, then simply run past to avoid a fight",
    checkbox: true,
    radio: false,
    value: 1,
    groupname: "chkbx",
   },
   {
-   categoryelement: "Player controlled mechanics can be used for purposes other than their stated function",
+   categoryelement: "Player controlled mechanics can be used for purposes other than their intended function",
    elementtooltip: "E.g., in Dishonored: the player can cast possession on a nearby AI while falling to avoid fall damage",
    checkbox: true,
    radio: false,
@@ -91,7 +91,7 @@ const category2 = {
  categoryelements: [
   {
    categoryelement: "Non-linear level design",
-   elementtooltip: "Levels can be traversed using multiple paths, e.g., entry to a building using the door, the roof, the sewer, etc",
+   elementtooltip: "Levels can be traversed using multiple paths, e.g., entry to a building using the door or the roof or the sewer, etc",
    checkbox: true,
    radio: false,
    value: 1,
@@ -115,7 +115,7 @@ const category2 = {
   },
   {
    categoryelement: "Skill-based movement",
-   elementtooltip: "Jumping and skill-based movement are used to navigate otherwise inaccessable areas, e.g., platforming, parkour",
+   elementtooltip: "Jumping and skill-based movement are used to navigate otherwise inaccessable areas, e.g., platforming, bunny-hopping, parkour",
    checkbox: true,
    radio: false,
    value: 1,
@@ -254,24 +254,24 @@ const category4 = {
    groupname: "chkbx",
   },
   {
-   categoryelement: "Player actions and decisions don't meaningfully alter plot or objectives",
-   elementtooltip: "Binary choices are present, but don't have meaningful effects or consequences on gameplay or plot",
+   categoryelement: "Choices and actions don't meaningfully alter plot or objectives",
+   elementtooltip: "The player is presented with nominal decisions to make or different ways to progress, but these don't have meaningful effects or consequences on gameplay or plot",
    checkbox: false,
    radio: true,
    value: 1,
    groupname: "decisionsradio",
   },
   {
-   categoryelement: "Player actions and decisions somewhat alter plot or objectives",
-   elementtooltip: "Actions and decisions have meaningful effects or consequences, but do not lead to significant differences between playthroughs",
+   categoryelement: "Choices and actions somewhat alter plot or objectives",
+   elementtooltip: "The player is presented with meaningful decisions to make or different ways to progress which have measurable effects or consequences, but do not lead to significant differences between playthroughs",
    checkbox: false,
    radio: true,
    value: 2,
    groupname: "decisionsradio",
   },
   {
-   categoryelement: "Player actions and decisions significantly alter plot or objectives",
-   elementtooltip: "A true branching narrative: actions and decisions will cause major divergence in plot or level content which leads to large differences between playthroughs",
+   categoryelement: "Choices and actions significantly alter plot or objectives",
+   elementtooltip: "A true branching narrative: player actions and decisions will cause major divergence in plot or level content which leads to substantial differences between playthroughs",
    checkbox: false,
    radio: true,
    value: 3,
@@ -287,7 +287,7 @@ const category4 = {
   },
   {
    categoryelement: "Two endings",
-   elementtooltip: "Binary, predetermined endings; e.g., 'the good ending' and 'the bad ending'",
+   elementtooltip: "Binary, predetermined endings; e.g., 'the good ending' and 'the bad ending,' e.g., in Bioshock: harvesting or saving Little Sisters determines the ending cutscene",
    radio: true,
    checkbox: false,
    value: 1,
@@ -313,7 +313,7 @@ const category4 = {
 };
 const category5 = {
  categoryname: "Interactive",
- categorydefinition: "Game world and mechanics that immerse the player",
+ categorydefinition: "Cohesive world and mechanic design which immerse the player",
  categoryelements: [
   {
    categoryelement: "Interactive environments",
@@ -325,7 +325,7 @@ const category5 = {
   },
   {
    categoryelement: "Discoverable world-building",
-   elementtooltip: "Non-forced methods to expand the lore e.g., notes, newspapers, radio broadcasts",
+   elementtooltip: "Non-required methods to expand the plot and world lore e.g., notes, newspapers, radio broadcasts",
    checkbox: true,
    radio: false,
    value: 1,
@@ -402,16 +402,16 @@ const category6 = {
  categorydefinition: "Direct combat with weapons, fast reflexes and decisions",
  categoryelements: [
   {
-   categoryelement: "Kicking / punching",
-   elementtooltip: "Using physical attacks to directly damage opponents",
+   categoryelement: "Hand-to-hand fighting",
+   elementtooltip: "Direct physical attacks e.g., punching, kicking, etc.",
    checkbox: true,
    radio: false,
    value: 1,
    groupname: "chkbx",
   },
   {
-   categoryelement: "Projectile weapons",
-   elementtooltip: "Using ranged weapons to deal damage to opponents",
+   categoryelement: "Projectile / energy weapons",
+   elementtooltip: "Ranged weapons e.g., guns, bows, plasma throwers, etc",
    checkbox: true,
    radio: false,
    value: 1,
@@ -419,23 +419,23 @@ const category6 = {
   },
   {
    categoryelement: "Melee weapons",
-   elementtooltip: "Using close-range weapons to deal damage to opponents",
+   elementtooltip: "Close-range weapons e.g., knives, swords, clubs, pipes, etc.",
    checkbox: true,
    radio: false,
    value: 1,
    groupname: "chkbx",
   },
   {
-   categoryelement: "Magic / powers / abilities",
-   elementtooltip: "Using supernatural or extraordinary powers to deal damage to opponents",
+   categoryelement: "Casting weapons",
+   elementtooltip: "Supernatural or magical powers, sci-fi technological abilities meant to cause damage",
    checkbox: true,
    radio: false,
    value: 1,
    groupname: "chkbx",
   },
   {
-   categoryelement: "Throwables",
-   elementtooltip: "Using throwable items to deal damage to opponents",
+   categoryelement: "Throwable weapons",
+   elementtooltip: "e.g., grenades, throwing knives, etc.",
    checkbox: true,
    radio: false,
    value: 1,
@@ -443,7 +443,7 @@ const category6 = {
   },
   {
    categoryelement: "Multiple ammunition types",
-   elementtooltip: "Using different types of ammunition to deal damage to opponents",
+   elementtooltip: "Weapons can utilize a variety of ammunition types depending on the required effect, e.g., armor piercing bullets, poison arrows, etc.",
    checkbox: true,
    radio: false,
    value: 1,
@@ -451,7 +451,7 @@ const category6 = {
   },
   {
    categoryelement: "Shields / armor",
-   elementtooltip: "Using protective gear to reduce damage taken from opponents",
+   elementtooltip: "Equippable protective gear which reduces damage taken from attacks",
    checkbox: true,
    radio: false,
    value: 1,
@@ -459,15 +459,7 @@ const category6 = {
   },
   {
    categoryelement: "Location based damage",
-   elementtooltip: "Dealing more damage by hitting specific areas on an opponent's body",
-   checkbox: true,
-   radio: false,
-   value: 1,
-   groupname: "chkbx",
-  },
-  {
-   categoryelement: "Controllable recoil",
-   elementtooltip: "Player can control the amount of recoil on an automatic weapon by mouse correction",
+   elementtooltip: "Attacks deal more damage in specific areas, e.g., headshots, gaps in armor, etc.",
    checkbox: true,
    radio: false,
    value: 1,
@@ -475,7 +467,7 @@ const category6 = {
   },
   {
    categoryelement: "Bullet / arrow drop",
-   elementtooltip: "Requiring player to adjust aim based on the distance and trajectory of a shot",
+   elementtooltip: "Ranged weapons require the player to adjust aim based on the distance and trajectory of a shot",
    checkbox: true,
    radio: false,
    value: 1,
@@ -485,7 +477,7 @@ const category6 = {
 };
 const category7 = {
  categoryname: "Strategic Combat",
- categorydefinition: "Indirect combat which rewards thinking and planning",
+ categorydefinition: "Indirect combat which rewards thinking and planning ahead",
  categoryelements: [
   {
    categoryelement: "Non-lethal combat",
@@ -505,7 +497,7 @@ const category7 = {
   },
   {
    categoryelement: "Stealth backstabs / takedowns",
-   elementtooltip: "Allows players to take out enemies silently and without detection",
+   elementtooltip: "Allows players to take out enemies silently and without immediate risk of detection",
    checkbox: true,
    radio: false,
    value: 1,
@@ -521,7 +513,7 @@ const category7 = {
   },
   {
    categoryelement: "Subduing weapons / items",
-   elementtooltip: "Weapons or items that stun or incapacitate enemies, such as pepper spray or stun guns",
+   elementtooltip: "Weapons or items that stun or temporarily incapacitate enemies, e.g., pepper spray, stun guns, etc.",
    checkbox: true,
    radio: false,
    value: 1,
@@ -545,7 +537,7 @@ const category7 = {
   },
   {
    categoryelement: "Security system traps",
-   elementtooltip: "Allows players to hack into and control turrets, robots, etc to take out enemies",
+   elementtooltip: "Players may place or hack into existing turrets, robots, etc. to cause damage to enemies",
    checkbox: true,
    radio: false,
    value: 1,
@@ -553,7 +545,7 @@ const category7 = {
   },
   {
    categoryelement: "Static / environmental traps / hazards",
-   elementtooltip: "Level elements which can damage enemies, such as spike pits/walls, falling logs, Indiana Jones-style dart/boulder traps, etc",
+   elementtooltip: "Level elements which can damage player and enemies alike, e.g., spike pits/walls, falling rocks, pressure plate-activated dart guns, etc",
    checkbox: true,
    radio: false,
    value: 1,
@@ -561,7 +553,7 @@ const category7 = {
   },
   {
    categoryelement: "Ability to take a hostage / human shield",
-   elementtooltip: "Allows players to take a hostage to use as a human shield, causing NPCs to react with restraint",
+   elementtooltip: "Players may take a hostage to use as a human shield, causing NPCs to react with restraint or change tactics",
    checkbox: true,
    radio: false,
    value: 1,
@@ -615,7 +607,7 @@ const category8 = {
   },
   {
    categoryelement: "Distraction / diversion mechanics",
-   elementtooltip: "",
+   elementtooltip: "AI can be led toward or away from a target area by intentional player actions, e.g., noises or thrown objects cause guards to investigate, etc",
    checkbox: true,
    radio: false,
    value: 1,
@@ -685,7 +677,7 @@ const category9 = {
   },
   {
    categoryelement: "NPCs observe and react to player actions while in their presence",
-   elementtooltip: "Non-player characters will respond to the player's actions when they are nearby",
+   elementtooltip: "NPCs will respond to the player's actions when they are nearby, e.g., if the player is holding a weapon, stealing items in plain sight, etc.",
    checkbox: true,
    radio: false,
    value: 1,
@@ -717,8 +709,7 @@ const category9 = {
   },
   {
    categoryelement: "Branching conversation trees",
-   elementtooltip:
-    "Conversations branch and the player must choose one of several dialog options to continue, these choices affect subsequent dialog. E.g., choosing a dialog option will limit how a conversation can progress -- not all dialog options in a conversation can be explored in one playthough",
+   elementtooltip: "Conversations branch and the player must choose one of several dialog options to continue, these choices affect subsequent dialog. E.g., choosing a dialog option will limit how a conversation can progress -- not all dialog options in a conversation can be explored in one playthough",
    checkbox: true,
    radio: false,
    value: 1,
@@ -772,7 +763,7 @@ const category10 = {
   },
   {
    categoryelement: "Selectable skills / perks",
-   elementtooltip: "Players can choose specific skills or perks to improve their character's abilities as they level up",
+   elementtooltip: "Player can choose specific skills or perks to improve their character's abilities as they level up",
    checkbox: true,
    radio: false,
    value: 1,
@@ -780,7 +771,7 @@ const category10 = {
   },
   {
    categoryelement: "Skill checks",
-   elementtooltip: "Players must have a certain level of a specific skill (e.g. level 3 hacker) to pass certain obstacles or access certain areas",
+   elementtooltip: "Player must achieve a certain level of a specific skill (e.g. level 3 hacker) to pass certain obstacles or access certain areas",
    checkbox: true,
    radio: false,
    value: 1,
@@ -788,7 +779,7 @@ const category10 = {
   },
   {
    categoryelement: "Crafting",
-   elementtooltip: "Players can gather materials and craft new items / equipment / consumables",
+   elementtooltip: "Player can gather materials and create new items / equipment / consumables",
    checkbox: true,
    radio: false,
    value: 1,
@@ -796,7 +787,7 @@ const category10 = {
   },
   {
    categoryelement: "Manage allied NPCs",
-   elementtooltip: "Players can recruit and manage NPC allies, giving orders and dismissing members as needed",
+   elementtooltip: "Player can recruit or manage NPC allies who benefit the player in some way e.g., aid in combat, heal, assist in exploration, etc.",
    checkbox: true,
    radio: false,
    value: 1,

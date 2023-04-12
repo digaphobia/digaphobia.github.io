@@ -1,8 +1,36 @@
+<!--
+I want you to write a java script which will generate various user fillable html inputs.
+the html inputs will be as follows:
+on the first row: dropdown with the months of the year with class 'month', dropdown with years beginning with 2023 and ending 2030 with class 'year'
+on the second row: text input with class 'saledate' and with a placeholder 'sale dates', text input with class 'salegame' with a placeholder 'name of game', text input with class 'gamelink' with a placeholder 'link to sale'
+I want the second row to repeat on the following three rows (for a total of four).
+below these rows I want a + button which will add another row of the inputs from second row below the rows already on the page.
+the + button will continue being at the bottom of these rows allowing more input rows to be added.
+beside every row which uses the second row inputs I want a - button which will delete that row. the first two rows (the dropdowns and the initial text input row) should not have a - button
+
+
+ok, now I want you to create a second script which functions the same way as the last one, but with different inputs:
+first row:
+text input with class 'releasedate' and placeholder 'Release date'
+text input with class 'releasename' and placeholder 'Name of game'
+second row: text inputs with ids and placeholders matching the names for each of the following: Steam,Itch.io,Epic,Playstation,Xbox,Game Pass,Switch
+In this script, both rows must be duplicated every time the + button is clicked. the - button will be on the first added row (placed at the end of the row), and an add row button below the last added row
+this will output to a div with id inputs-container2
+be sure that the tokens do not contain whitespace
+
+please write a script which will listen to the output of this script and generate a summary of the outputs. it will then copy this summary to the clipboard using a button with id 'salecopy'.
+The summary should use reddit-compatible markdown formatting.
+the first row will use a # Heading which will say "Upcoming releases:"
+for each releasename entry, the script will create a new row with the following formatting:
+'releasedate -- releasename (for each platform which has a link input, create a link using the name of the platform and the link input, separate each link with a space)
+
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Sinno generator v1</title>
+  <title>Dark Mode Input Example</title>
   <style>
     body {
       background-color: #333;
@@ -184,19 +212,25 @@ function generateInputs2() {
   // create the first row with text inputs
   const releaseDateInput = createTextInput('releasedate', 'Release date');
   const releaseNameInput = createTextInput('releasename', 'Name of game');
+  const releaseRatingInput = createTextInput('releaserating', 'Steam Rating');
   const row1 = document.createElement('div');
   row1.appendChild(releaseDateInput);
   row1.appendChild(releaseNameInput);
+  row1.appendChild(releaseRatingInput);
 
   // create the second row with text inputs
   const platforms = [
     { id: 'steam', placeholder: 'Steam' },
     { id: 'itchio', placeholder: 'Itch.io' },
+	{ id: 'gog', placeholder: 'GOG' },
     { id: 'epic', placeholder: 'Epic' },
     { id: 'playstation', placeholder: 'Playstation' },
     { id: 'xbox', placeholder: 'Xbox' },
     { id: 'gamepass', placeholder: 'Game Pass' },
-    { id: 'switch', placeholder: 'Switch' }
+    { id: 'switch', placeholder: 'Switch' },
+	{ id: 'twitter', placeholder: 'Twitter' },
+	{ id: 'discord', placeholder: 'Discord' },
+	{ id: 'website', placeholder: 'Website' }
   ];
   const row2 = document.createElement('div');
   for (let i = 0; i < platforms.length; i++) {
@@ -213,13 +247,18 @@ function generateInputs2() {
     const newRow2 = document.createElement('div');
     newRow1.appendChild(createTextInput('releasedate', 'Release date'));
     newRow1.appendChild(createTextInput('releasename', 'Name of game'));
+	newRow1.appendChild(createTextInput('releaserating', 'Steam Rating'));
     newRow2.appendChild(createTextInput('steam', 'Steam'));
     newRow2.appendChild(createTextInput('itchio', 'Itch.io'));
+	newRow2.appendChild(createTextInput('gog', 'GOG'));
     newRow2.appendChild(createTextInput('epic', 'Epic'));
     newRow2.appendChild(createTextInput('playstation', 'Playstation'));
     newRow2.appendChild(createTextInput('xbox', 'Xbox'));
     newRow2.appendChild(createTextInput('gamepass', 'Game Pass'));
     newRow2.appendChild(createTextInput('switch', 'Switch'));
+	newRow2.appendChild(createTextInput('twitter', 'Twitter'));
+	newRow2.appendChild(createTextInput('discord', 'Discord'));
+	newRow2.appendChild(createTextInput('website', 'Website'));
     const removeRowButton = createRemoveRowButton(newRow1, newRow2);
     newRow1.appendChild(removeRowButton);
     newRow1.style.marginTop = '10px'; // add margin between rows
@@ -268,12 +307,13 @@ document.getElementById('upcomingcopy').addEventListener('click', function() {
   for (let i = 0; i < rows.length; i += 2) {
     const releaseDate = rows[i].querySelector('.releasedate').value;
     const releaseName = rows[i].querySelector('.releasename').value;
-    if (releaseDate && releaseName) {
-      summary += `- ${releaseDate} -- ${releaseName}`;
+	const releaseRating = rows[i].querySelector('.releaserating').value;
+    if (releaseDate && releaseName && releaseRating) {
+      summary += `- ${releaseDate} - __${releaseName}__ (${releaseRating}% Positive)\n`;
       const platforms = rows[i + 1].querySelectorAll('input');
       for (let j = 0; j < platforms.length; j++) {
         if (platforms[j].value) {
-          summary += ` [${platforms[j].placeholder}](${platforms[j].value})`;
+          summary += ` [${platforms[j].placeholder}](${platforms[j].value}) /`;
         }
       }
       summary += '\n';
@@ -297,3 +337,9 @@ document.getElementById('upcomingcopy').addEventListener('click', function() {
   </script>
 </body>
 </html>
+
+<!--
+
+
+
+-->
